@@ -42,7 +42,7 @@ if(secs < 10){
 
 }
 
-timestamp = `${mins}:${secs}`
+timestamp.innerHTML = `${mins}:${secs}`
 
 
 }
