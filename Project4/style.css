@@ -67,5 +67,5 @@ p{
 }
 
 select:focus, input:focus, button:focus{
-    outline: 0;
+    outline: 0; 
 }
