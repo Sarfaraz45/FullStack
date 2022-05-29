@@ -86,13 +86,21 @@ function sortByBalance(){
 
 // Function to sum all user balance into total balance
 function totalBalance(){
+       // Update the DOM with new User data
+       updateDOM();
     // Add up all balance from all users
     // Accumulator starts at 0 and adds the current users balance for each iteration
 
     const balance = data.reduce((acc, user) => (acc += user.balance), 0);
 
-    //Update DOM
-    updateDOM();
+    //Create a Div for balance
+    const balanceElement = document.createElement('div');
+    //Set the inner HTML for the new Div
+    balanceElement.innerHTML = `<h3>Total Balance:  ${formatNumberToDollar(balance)}</h3>`;
+
+    //Append balance in main eleement
+    main.appendChild(balanceElement);
+   
 
 }
 
