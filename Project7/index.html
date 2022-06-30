@@ -1,0 +1,79 @@
+<!-- 
+7. Classic Hangman Game
+User can select letters from keyboard to guess the word in a certain number of tries
+
+TABLE OF CONTENT:
+● Display hangman pole and figure using SVG
+● Generate a random word
+● Display word in UI with correct letters
+● Display wrong letters
+● Show notification when select a letter twice
+● Show popup on win or lose
+● Play again button to reset game -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hangman</title>
+</head>
+<body>
+  <h1>Hangman</h1>
+  <p>Find the hidden word - guess a letter by entering it on your keboard</p>
+  <div class="game-container">
+    <!-- This is the SVG containing the platform and the hangman -->
+    <svg height="250" width="250" class="figure-container" >
+        <!-- This is the hanging platform -->
+        <line x1="60" y1="20" x2="140" y2="20"/>
+        <line x1="140" y1="20" x2="140" y2="50"/>
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="90" y2="230" />
+
+        <!-- This is the hangman -->
+        <!-- This is the Head -->
+        <circle cx="140" cy="70" r="20" class="figure-part" />
+        <!-- This is the body -->
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
+        <!-- These are the arms -->
+        <line x1="140" y1="100" x2="110" y2="150" class="figure-part"/>
+        <line x1="140" y1="100" x2="170" y2="150" class="figure-part"/>
+        <!-- These are the legs -->
+        <line x1="140" y1="150" x2="110" y2="190" class="figure-part"/>
+         <line x1="140" y1="150" x2="170" y2="190" class="figure-part" />
+
+    </svg>
+
+    <!-- This is the container for all incorrect letters guessed -->
+    <div class="incorrect-letters-containers">
+        <div id="incorrect-letters">
+           
+        </div>
+    </div>
+    <!-- This is the container for selected word -->
+    <div id="word" class="word">
+
+    </div>
+
+    <!-- This is the popup -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2 id="final-message">
+                
+            </h2>
+            <button id="play-btn">
+                Play Again
+            </button>
+        </div>
+    </div>
+
+  </div>
+
+<!-- This is the notification if user enters repeat letter -->
+<div class="notification-container " id="notification-container">
+    <p>It looks like already guessed this letter, please try another letter</p>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
